@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for post in object_list %}
+    <h1 style="text-align: center; font-family: sans-serif; color: gray; text-decoration: none;"><a href="{% url 'detail' post.pk %}">{{ post.title }}</a></h1>
+    <p style="text-align: center; font-family: sans-serif; color: gray; text-decoration: none;">{{ post.body | slice:":100" }}</p>
+{% endfor %}
+
+{% endblock content %}
